@@ -1,0 +1,23 @@
+name: "USC KRC Bioinformatics"
+title: "USC KRC Bioinformatics"
+type: inverse
+left:
+  - text: "Kidney JC"
+    menu:
+       - text: "Kidney JC"
+         href: ./kidneyjc.html
+  - text: "USC SCORE"
+    menu:
+       - text: "USC SCORE"
+         href: ./score.html
+  - text: "Datasets"
+    menu:
+       - text: "scRNAseq"
+         href: ./scrnaseq.html
+       - text: "Bulk"
+         href: ./bulk.html
+  - text: "Contact"
+    href: ./contact.html
+right:
+  - icon:
+    href: 

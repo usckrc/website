@@ -1,2 +1,2 @@
-# website
-This is the code for creating the USCKRC Bioinformatics Website
+# mywebsite
+My first website

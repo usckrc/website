@@ -1,0 +1,100 @@
+---
+title: "USC Single-Cell Omics Research and Education"
+output:
+  html_document: 
+    toc: yes
+    toc_depth: 3
+    toc_float: true
+layout: page
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r load new packages, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+if (!require("here")) {install.packages("here"); require("here")}
+```
+
+# About
+
+**University of Southern California Single-Cell Omics Research and Education (USC-SCORE)** is dedicated to driving excellence in the field of single-cell omics. We focus on applying and developing advanced methodologies to explore gene expression, epigenetics, proteomics, and spatial biology at the single-cell resolution. Our community is committed to training the next generation of scientists through workshops, seminars, and collaborative projects. We strive to uncover new insights into cellular diversity and its implications for personalized medicine and therapeutic innovation.
+
+Organizers:
+  Jonathan Nelson (jnelson4@usc.edu)
+  
+# Email Signup
+
+Click on this [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE.
+
+# Upcoming Presentation Topics: 
+
+| Date        | Topic          | Presenter  |
+| :--------: |:-------------:| :-----:|
+| January      | Updates to Seurat V5                                     | Jonathan Nelson |
+| February     | Advances in scRNASeq Technologies                        | Jeremiah Reyes |
+| March        | Best Practices for Reporting Data (GitHub/GEO)           | Jessica Bahena-Lopez |
+| April        | Cell-Cell Interactions with CellChat                     | Kevin Burfeind |
+| May          | Access to KPMP Datasets                                  | Xiao-Tong Su |
+| June         | Spatial Transcriptomic Analysis                          | TBD |
+
+# Previous Topics
+
+### Installing R and R Studio with Seurat
+
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1g5VKzv95DeIxfGaYfbKAKAotLiOld0DF?usp=drive_link) to materials
+
+### Downloading Files from GEO and other Seurat Functions
+
+Link to materials. 
+
+### Advanced Data Visualization
+
+Link to materials. 
+
+### Integrating Datasets with FindIntegrationAnchors()
+
+Link to materials. 
+
+### Working with Data Files and Dataframes
+
+Link to materials. 
+
+### Recreating Manuscript Figures
+
+Link to materials. 
+
+### Getting Fancy with ggplot2
+
+Link to materials. 
+
+### Pseudobulk and GSEA analysis
+
+Link to materials. 
+
+### Working with Complex Datasets
+
+Link to materials. 
+
+### 10X Genomics on Spatial Transcriptomics
+
+Link to materials. 
+
+### Cell Ranger and ShinyCell
+
+Link to materials. 
+
+### Isolating Nuclei
+
+Link to materials. 
+
+### Using ChatGPT
+
+Link to materials. 
+
+
+

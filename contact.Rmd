@@ -1,0 +1,10 @@
+---
+title: "Contact USC KRC Bioinformatics"
+output: 
+  html_document:
+    toc: FALSE
+---
+
+
+You can contact USC KRC Bioinformatics by emailing us at usckrcbioinformatics@gmail.com
+

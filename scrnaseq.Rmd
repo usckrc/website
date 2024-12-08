@@ -1,0 +1,76 @@
+---
+title: "scRNAseq Datasets"
+output:
+  html_document: 
+    toc: yes
+    toc_depth: 3
+    toc_float: true
+layout: page
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r load new packages, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+if (!require("here")) {install.packages("here"); require("here")}
+```
+
+
+
+# List of Datasets
+
+[Kidney Stromal Cells](#KidneyStromalCells) <br>
+[Ace2 Knockout Kidneys](#Ace2KnockoutKidneys) <br>
+
+
+# Datasets by Type
+
+## Bulk
+
+<a id="Ace2KnockoutKidneys"></a>
+
+### Ace2 Knockout Kidneys
+
+
+![](`r here::here("Images", "Gurley_Kidney.png")`)
+
+[**Interactive Browser**](https://nelsonlab.shinyapps.io/PTACE2KO_Kidney/) <br>
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE253448) <br>
+**Manuscript** (Unpublished) <br>
+
+## Enriched
+
+<a id="KidneyStromalCells"></a>
+
+### Kidney Stromal Cells
+
+
+![](`r here::here("Images", "Nelson_Stroma.png")`)
+
+[**Interactive Browser**](https://nelsonlab.shinyapps.io/Pdgfrb_INTACT/) <br>
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280628) <br>
+**Manuscript** (Unpublished) <br>
+
+# Datasets by Investigator
+
+## Nelson
+
+[Kidney Stromal Cells](#KidneyStromalCells)
+
+## Peti-Peterdi
+
+## Gurley
+
+[Ace2 Knockout Kidneys](#Ace2KnockoutKidneys)
+
+## Perin
+
+## McDonough
+
+## Li
+
+

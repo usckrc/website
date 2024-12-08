@@ -1,0 +1,9 @@
+---
+title: "About USC KRC Bioinformatics"
+output: 
+  html_document:
+    toc: FALSE
+---
+
+
+Founded in January of 2024, the mission of the **USC Kidney Research Center (KRC) Bioinformatics** initiative is to advance kidney research through the integration of cutting-edge computational tools, high-dimensional omics data, and collaborative innovation. We aim to empower researchers, clinicians, and students by providing access to curated datasets, robust analytical frameworks, and educational resources. Through our commitment to open science and interdisciplinary collaboration, we strive to uncover new insights into kidney health and disease, driving discoveries that improve patient outcomes and contribute to the forefront of biomedical research.
