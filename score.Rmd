@@ -22,12 +22,14 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 **University of Southern California Single-Cell Omics Research and Education (USC-SCORE)** is dedicated to driving excellence in the field of single-cell omics. We focus on applying and developing advanced methodologies to explore gene expression, epigenetics, proteomics, and spatial biology at the single-cell resolution. Our community is committed to training the next generation of scientists through workshops, seminars, and collaborative projects. We strive to uncover new insights into cellular diversity and its implications for personalized medicine and therapeutic innovation.
 
+We meet on the **last Monday of the month from 4pm-5pm PST**.
+
 Organizers:
   Jonathan Nelson (jnelson4@usc.edu)
   
 # Email Signup
 
-Click on this [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE.
+Click [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE and receive emails with the zoom link to attend.
 
 # Upcoming Presentation Topics: 
 
@@ -46,55 +48,85 @@ Click on this [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE.
 
 #### Description
 
-[**Link**](https://drive.google.com/drive/folders/1g5VKzv95DeIxfGaYfbKAKAotLiOld0DF?usp=drive_link) to materials
+[**Link**](https://drive.google.com/drive/folders/1g5VKzv95DeIxfGaYfbKAKAotLiOld0DF?usp=sharing) to materials
 
 ### Downloading Files from GEO and other Seurat Functions
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1_c0rTF99LIr7MpSBi-MqjCToNdjIWWEo?usp=sharing) to materials
 
 ### Advanced Data Visualization
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1TaR9xpt0boFfyPON9Cv3O2RutXhrbdlg?usp=sharing) to materials
 
 ### Integrating Datasets with FindIntegrationAnchors()
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1_bpbimP9VAMJ-h4RpAfALiTIBsuSQqvX?usp=sharing) to materials
 
 ### Working with Data Files and Dataframes
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1r9qASJfO7qIdzqBdIv7BkChlFY1B33dS?usp=sharing) to materials
 
 ### Recreating Manuscript Figures
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1yd1SMugaVh301uMcgTsoXGyz5MJorcH-?usp=sharing) to materials 
 
 ### Getting Fancy with ggplot2
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/16ES02R2Xbt1VIe4dm8KAPJTAzm9NiM2p?usp=sharing) to materials
 
 ### Pseudobulk and GSEA analysis
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1grTN0UFqtAm3Mnc5kuWRtQKrcbL2fozY?usp=sharing) to materials
 
 ### Working with Complex Datasets
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1ITiK7vPoaWjvW5F5Jhjm6xSs_-I1ur5F?usp=sharing) to materials
 
 ### 10X Genomics on Spatial Transcriptomics
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1nq0009Jo7Q2_KsWaz6rH_2jwPG46jDIX?usp=sharing) to materials
+
+### Biolegend on CITE-seq
+
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/17o2vR35N85_GcKTSgDSgMmo-HQBDMuvf?usp=sharing) to materials
 
 ### Cell Ranger and ShinyCell
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1E3_Lw30ue6hWVMt_e0NUa6gtQPgGIJ2t?usp=sharing) to materials
 
 ### Isolating Nuclei
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1hd5AeWM6-gF8LahkrluCKV9A-rt2iCSI?usp=sharing) to materials
 
 ### Using ChatGPT
 
-Link to materials. 
+#### Description
+
+[**Link**](https://drive.google.com/drive/folders/1whKV0oDJ0m5A0dm1SgIak61pIKa5Ng1o?usp=sharing) to materials
 
 
 
