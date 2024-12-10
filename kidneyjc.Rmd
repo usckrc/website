@@ -22,7 +22,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 # About
 
-Join us at the **USC Kidney Research Center** for our new Journal Club on Kidney Disease! This interactive forum brings together researchers, clinicians, and students for in-depth discussions on the latest advancements in kidney research. Each quarter, we will explore a new theme through a curated selection of high-impact articles, fostering a collaborative environment for knowledge exchange and critical analysis. Open to all interested in the forefront of kidney disease research and innovations. Don’t miss this opportunity to engage with colleagues and deepen your understanding of the complex science behind kidney health and disease.
+Join us at the **Vito M Campese MD/UKRO Kidney Research Center of USC** for our new Journal Club on Kidney Disease! This interactive forum brings together researchers, clinicians, and students for in-depth discussions on the latest advancements in kidney research. Each quarter, we will explore a new theme through a curated selection of high-impact articles, fostering a collaborative environment for knowledge exchange and critical analysis. Open to all interested in the forefront of kidney disease research and innovations. Don’t miss this opportunity to engage with colleagues and deepen your understanding of the complex science behind kidney health and disease.
 
 We meet on the **first Tuesday of the month from 4-5pm PST**.
 
@@ -38,10 +38,11 @@ Click [**here**](http://eepurl.com/i5eqL6) to join the Southern California Kidne
 
 | Date        | Manuscript           | Presenter  |
 | :------: |:-------------:| :----:|
-| January 7th       | [**Faivre et al. JASN 2024**](https://pubmed.ncbi.nlm.nih.gov/38652545/)               | Jonathan Nelson |
-| February 4th      | [**Arkhipov et al. Hypertension 2024**](https://pubmed.ncbi.nlm.nih.gov/38618734/)     | Alicia McDonough |
-| March 4th         | [**Aggarwal et al. Science 2024**](https://pubmed.ncbi.nlm.nih.gov/38386758/)          | Jonathan Nelson |
+| January 7th       | Spatiotemporal Landscape of Kidney <br> Tubular Responses to Glomerular Proteinuria <br> [**Faivre et al. JASN 2024**](https://pubmed.ncbi.nlm.nih.gov/38652545/)               | Jonathan Nelson |
+| February 4th      | Dissociation of Hypertension and Renal Damage <br> After Cessation of High-Salt Diet in Dahl Rats <br> [**Arkhipov et al. Hypertension 2024**](https://pubmed.ncbi.nlm.nih.gov/38618734/)     | Alicia McDonough |
+| March 4th         | SOX9 switch links regeneration to fibrosis <br> at the single-cell level in mammalian kidneys <br> [**Aggarwal et al. Science 2024**](https://pubmed.ncbi.nlm.nih.gov/38386758/)          | Jonathan Nelson |
 
+**Trouble accessing a manuscript?** Email Alicia: mcdonoug@usc.edu
 
 # Spring 2025 Theme: 
 
