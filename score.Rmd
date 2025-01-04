@@ -35,96 +35,96 @@ Click [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE and receive emails 
 
 | Date        | Topic          | Presenter  |
 | :--------: |:-------------:| :-----:|
-| January      | Updates to Seurat V5                                     | Jonathan Nelson |
-| February     | Advances in scRNASeq Technologies                        | Jeremiah Reyes |
-| March        | Best Practices for Reporting Data (GitHub/GEO)           | Jessica Bahena-Lopez |
-| April        | Cell-Cell Interactions with CellChat                     | Kevin Burfeind |
-| May          | Access to KPMP Datasets                                  | Xiao-Tong Su |
-| June         | Spatial Transcriptomic Analysis                          | TBD |
+| January 27th      | Updates to Seurat V5                                     | Jonathan Nelson |
+| February 24th     | Advances in scRNASeq Technologies                        | Jeremiah Reyes |
+| March 31st        | Best Practices for Reporting Data (GitHub/GEO)           | Jessica Bahena-Lopez |
+| April 28th        | Cell-Cell Interactions with CellChat                     | Kevin Burfeind |
+| May 26th          | Access to KPMP Datasets                                  | Xiao-Tong Su |
+| June 30th         | Spatial Transcriptomic Analysis                          | TBD |
 
 # Previous Topics
 
 ### Installing R and R Studio with Seurat
 
-#### Description
+This session was presented by **Jonathan Nelson** and covers how to install R, R Studio, and Seurat, while also providing a tutorial on how to analyze a simple scRNASeq dataset of enriched glomeruli from a kidney. 
 
 [**Link**](https://drive.google.com/drive/folders/1g5VKzv95DeIxfGaYfbKAKAotLiOld0DF?usp=sharing) to materials
 
 ### Downloading Files from GEO and other Seurat Functions
 
-#### Description
+This session was presented by **Kevin Burfeind** and covers how to merge two different samples into one data file and how to upload different scRNAseq file types that are commonly uploaded to GEO.  
 
 [**Link**](https://drive.google.com/drive/folders/1_c0rTF99LIr7MpSBi-MqjCToNdjIWWEo?usp=sharing) to materials
 
 ### Advanced Data Visualization
 
-#### Description
+This session was presented by **Jonathan Nelson** and **Annie Lackey** and covers how to use the `group.by` and `split.by` arguments in Seurat as well as how to generate a multi-dimensional dotplot and a 3D UMAP.
 
 [**Link**](https://drive.google.com/drive/folders/1TaR9xpt0boFfyPON9Cv3O2RutXhrbdlg?usp=sharing) to materials
 
 ### Integrating Datasets with FindIntegrationAnchors()
 
-#### Description
+This session was presented by **Annie Lackey** and covers how to use FindIntegrationAnchors() to deal with strong batch (or disease) effects in your dataset. The example data used here was for the distal nephron of the kidney responding to ischemic injury. 
 
 [**Link**](https://drive.google.com/drive/folders/1_bpbimP9VAMJ-h4RpAfALiTIBsuSQqvX?usp=sharing) to materials
 
 ### Working with Data Files and Dataframes
 
-#### Description
+This session was presented by **Adam Munhall** and covers how to work with data files and dataframes in R and was unironicallyed titled "Don't let your data.frame you in".
 
 [**Link**](https://drive.google.com/drive/folders/1r9qASJfO7qIdzqBdIv7BkChlFY1B33dS?usp=sharing) to materials
 
 ### Recreating Manuscript Figures
 
-#### Description
+This session was presented by **Xiao-Tong Su** and **Jonathan Nelson** covers how to re-create from Seurat Objects different manuscript figures, including a stacked violin plot and proportion barplot.
 
 [**Link**](https://drive.google.com/drive/folders/1yd1SMugaVh301uMcgTsoXGyz5MJorcH-?usp=sharing) to materials 
 
 ### Getting Fancy with ggplot2
 
-#### Description
+This session was presented by **Grace Deitzler**, who at the time was a PhD candidate at Oregon State University, and covers how to create custom color palttes, creating animalted plots, and playing around with custom themes.  
 
 [**Link**](https://drive.google.com/drive/folders/16ES02R2Xbt1VIe4dm8KAPJTAzm9NiM2p?usp=sharing) to materials
 
 ### Pseudobulk and GSEA analysis
 
-#### Description
+This session was presented by **Xiao-Tong SU** and **Jeremiah Reyes**, and covers how to approach a Pseudobulk analysis using *DEseq2* (XTS) and GSEA (JVR) using the *Cluster Profiler* package.
 
 [**Link**](https://drive.google.com/drive/folders/1grTN0UFqtAm3Mnc5kuWRtQKrcbL2fozY?usp=sharing) to materials
 
 ### Working with Complex Datasets
 
-#### Description
+This session was presented by **Katie Emberley**, PhD Candidate in the Emery Lab, and covers how to remove ambient RNA (with SoupX), remove doublets (doubletfinder), and integrate multiple samples together into a single object and then subset into distict populations for future analysis.
 
 [**Link**](https://drive.google.com/drive/folders/1ITiK7vPoaWjvW5F5Jhjm6xSs_-I1ur5F?usp=sharing) to materials
 
 ### 10X Genomics on Spatial Transcriptomics
 
-#### Description
+This session was presented by **10X Genomics** and covered a preprint that showed early data using a Xenium 313-plex on FFPE tissue.
 
 [**Link**](https://drive.google.com/drive/folders/1nq0009Jo7Q2_KsWaz6rH_2jwPG46jDIX?usp=sharing) to materials
 
 ### Biolegend on CITE-seq
 
-#### Description
+This session was presented by **Biolegend** and covered how to use CITE-seq to facilitate multi-Omic analysis of single cells.
 
 [**Link**](https://drive.google.com/drive/folders/17o2vR35N85_GcKTSgDSgMmo-HQBDMuvf?usp=sharing) to materials
 
 ### Cell Ranger and ShinyCell
 
-#### Description
+This session was presented by **Jonathan Nelson** and covered how to use Cell Ranger starting with a Linux installation on a PC, and then how to use Shiny Cell to create an interactive web application of an scRNAseq dataset.
 
 [**Link**](https://drive.google.com/drive/folders/1E3_Lw30ue6hWVMt_e0NUa6gtQPgGIJ2t?usp=sharing) to materials
 
 ### Isolating Nuclei
 
-#### Description
+This session was presented by **Greg Duncan**, postdoc in the Emery Lab, and **Jonathan Nelson** and covered thier practical experience isolating nuclei (from Kidney, Retina, and Optic Nerve) and then enriching for specific populations using Fluorescence Activated Nuclei Sorting (FANS).
 
 [**Link**](https://drive.google.com/drive/folders/1hd5AeWM6-gF8LahkrluCKV9A-rt2iCSI?usp=sharing) to materials
 
 ### Using ChatGPT
 
-#### Description
+This session was presented by **Arjun Lakshmanan** and **Joe Yang**, high school bioinformatics interns in the Division of Nephrology at OHSU, and and covered their experiences using ChatGPT to accelerate their scRNAseq learning and analysis. 
 
 [**Link**](https://drive.google.com/drive/folders/1whKV0oDJ0m5A0dm1SgIak61pIKa5Ng1o?usp=sharing) to materials
 
