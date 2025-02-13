@@ -18,8 +18,6 @@ knitr::opts_chunk$set(echo = TRUE)
 if (!require("here")) {install.packages("here"); require("here")}
 ```
 
-# Test
-
 # About
 
 **University of Southern California Single-Cell Omics Research and Education (USC-SCORE)** is dedicated to driving excellence in the field of single-cell omics. We focus on applying and developing advanced methodologies to explore gene expression, epigenetics, proteomics, and spatial biology at the single-cell resolution. Our community is committed to training the next generation of scientists through workshops, seminars, and collaborative projects. We strive to uncover new insights into cellular diversity and its implications for personalized medicine and therapeutic innovation.
