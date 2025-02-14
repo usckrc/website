@@ -38,8 +38,8 @@ Click [**here**](http://eepurl.com/i5eqL6) to join the Southern California Kidne
 
 | Date        | Manuscript           | Presenter  | Material |
 | :------: |:-------------:| :----:|:----:|
-| January 7th       | Spatiotemporal Landscape of Kidney <br> Tubular Responses to Glomerular Proteinuria <br> [**Faivre et al. JASN 2024**](https://pubmed.ncbi.nlm.nih.gov/38652545/)               | Jonathan Nelson | [**Link**](https://drive.google.com/drive/folders/1KAIukNTof5Bk7sLQxL5LZW42bP23kCFJ?usp=sharing)   |
-| February 4th      | Dissociation of Hypertension and Renal Damage <br> After Cessation of High-Salt Diet in Dahl Rats <br> [**Arkhipov et al. Hypertension 2024**](https://pubmed.ncbi.nlm.nih.gov/38618734/)     | Alicia McDonough | |
+| January 7th       | Spatiotemporal Landscape of Kidney <br> Tubular Responses to Glomerular Proteinuria <br> [**Faivre et al. JASN 2024**](https://pubmed.ncbi.nlm.nih.gov/38652545/)               | Jonathan Nelson | [**Link**](https://drive.google.com/drive/folders/1KAIukNTof5Bk7sLQxL5LZW42bP23kCFJ?usp=drive_link)   |
+| February 4th      | Dissociation of Hypertension and Renal Damage <br> After Cessation of High-Salt Diet in Dahl Rats <br> [**Arkhipov et al. Hypertension 2024**](https://pubmed.ncbi.nlm.nih.gov/38618734/)     | Alicia McDonough |[**Link**](https://drive.google.com/drive/folders/1_uaJlZAPL4NqD3qXMhRIMz4Iu5dxo2Cj?usp=drive_link)|
 | March 4th         | SOX9 switch links regeneration to fibrosis <br> at the single-cell level in mammalian kidneys <br> [**Aggarwal et al. Science 2024**](https://pubmed.ncbi.nlm.nih.gov/38386758/)          | Jonathan Nelson | |
 
 **Trouble accessing a manuscript?** Email Alicia: mcdonoug@usc.edu
