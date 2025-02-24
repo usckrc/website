@@ -33,9 +33,9 @@ Click [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE and receive emails 
 
 # Upcoming Presentation Topics: 
 
-| Date        | Topic          | Presenter  |
-| :--------: |:-------------:| :-----:|
-| January 27th      | Updates to Seurat V5                                     | Jonathan Nelson |
+| Date        | Topic          | Presenter  | Materials |
+| :--------: |:-------------:| :-----:| :-----:|
+| January 27th      | Updates to Seurat V5                                     | Jonathan Nelson |[**SCORE #1**](https://usckrc.github.io/website/SCORE_1.html)|
 | February 24th     | Advances in scRNASeq Technologies                        | Jeremiah Reyes |
 | March 31st        | Best Practices for Reporting Data (GitHub/GEO)           | Jessica Bahena-Lopez |
 | April 28th        | Cell-Cell Interactions with CellChat                     | Kevin Burfeind |
