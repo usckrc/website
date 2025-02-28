@@ -5,7 +5,7 @@ left:
   - text: "Kidney JC"
     menu:
        - text: "Kidney JC"
-         href: ./kidneyjc.html
+         href: ./kidneyjc_tabletest.html
   - text: "USC SCORE"
     menu:
        - text: "USC SCORE"
