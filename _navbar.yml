@@ -16,6 +16,8 @@ left:
          href: ./scrnaseq.html
        - text: "Bulk"
          href: ./bulk.html
+  - text: "Proteomics"
+    href: ./proteomics.html
   - text: "News"
     href: ./news.html
   - text: "Members"
