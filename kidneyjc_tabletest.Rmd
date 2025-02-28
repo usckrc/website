@@ -88,11 +88,38 @@ df4
 
 ```
 
-
-
 # Spring 2025 Theme: 
 
 ## Intravital Imaging
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+smr_df <- read.xlsx(here("data", "sckjc_spring2025.xlsx"))
+
+url1 <- smr_df$url1 
+  
+url2 <- smr_df$url2
+
+smr_df2 <- smr_df %>% select(-url1, -url2) %>% 
+  mutate_all(~ replace(., is.na(.), ""))
+
+smr_df3 <- smr_df2 %>%
+  kbl(booktabs = T, align = "c") %>%
+  kable_styling(full_width = TRUE) %>%
+  column_spec(3, link = url1) %>% 
+  column_spec(5, link = url2) %>%
+  column_spec(1, bold = T, color = "#990000") %>% 
+  column_spec(3, bold = T, color = "#990000") %>% 
+  column_spec(5, bold = T, color = "#990000") %>% 
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "15em")
+
+smr_df3
+
+```
+
 
 # Summer 2025 Theme:
 
