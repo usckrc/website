@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Southern California Kidney Journal Club"
 output:
@@ -120,3 +121,124 @@ spg_df3
 # Summer 2025 Theme:
 
 ## Environmental Pollutants and Kidney Disease
+=======
+---
+title: "Southern California Kidney Journal Club"
+output:
+  html_document: 
+    toc: yes
+    toc_depth: 3
+    toc_float: true
+layout: page
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r load new packages, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+if (!require("here")) {install.packages("here"); require("here")}
+if (!require("openxlsx")) {install.packages("openxlsx"); require("openxlsx")}
+if (!require("tidyverse")) {install.packages("tidyverse"); require("tidyverse")}
+if (!require("gt")) {install.packages("gt"); require("gt")}
+if (!require("htmltools")) {install.packages("htmltools"); require("htmltools")}
+if (!require("kableExtra")) {install.packages("kableExtra"); require("kableExtra")}
+
+
+```
+
+![](`r here::here("Images", "kidneyjc.png")`)
+
+# About
+
+Join us at the **Vito M Campese MD/UKRO Kidney Research Center of USC** for our new Journal Club on Kidney Disease! This interactive forum brings together researchers, clinicians, and students for in-depth discussions on the latest advancements in kidney research. Each quarter, we will explore a new theme through a curated selection of high-impact articles, fostering a collaborative environment for knowledge exchange and critical analysis. Open to all interested in the forefront of kidney disease research and innovations. Don’t miss this opportunity to engage with colleagues and deepen your understanding of the complex science behind kidney health and disease.
+
+We meet on the **first Tuesday of the month from 4-5pm PST**.
+
+**Organizers**: Jonathan Nelson (jnelson4@usc.edu) and Alicia McDonough (mcdonoug@usc.edu)
+
+# Email Signup
+
+Click [**here**](http://eepurl.com/i5eqL6) to join the Southern California Kidney Journal Club and receive emails with the zoom link to attend.
+
+# Winter 2025 Theme: 
+
+## Hypertension and Kidney Damage
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+wtr_df <- read.xlsx(here("data", "sckjc_winter2025.xlsx"))
+
+url1 <- wtr_df$url1 
+  
+url2 <- wtr_df$url2
+
+wtr_df2 <- wtr_df %>% select(-url1, -url2) %>% 
+  mutate_all(~ replace(., is.na(.), ""))
+
+#wtr_df3 <- wtr_df2 %>%
+  #kbl(booktabs = T, align = "c") %>%
+  #kable_styling() %>%
+  #kable_paper(full_width = T) %>%
+  #column_spec(3, link = url1) %>% 
+  #column_spec(5, link = url2)
+
+#wtr_df3
+
+wtr_df4 <- wtr_df2 %>%
+  kbl(booktabs = T, align = "c") %>%
+  kable_styling() %>%
+  column_spec(3, link = url1) %>% 
+  column_spec(5, link = url2) %>%
+  column_spec(1, bold = T, color = "#990000") %>% 
+  column_spec(3, bold = T, color = "#990000") %>% 
+  column_spec(5, bold = T, color = "#990000") %>% 
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "25em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em")
+
+wtr_df4
+
+```
+
+**Trouble accessing a manuscript?** Email Alicia: mcdonoug@usc.edu
+
+# Spring 2025 Theme: 
+
+## Intravital Imaging
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+spg_df <- read.xlsx(here("data", "sckjc_spring2025.xlsx"))
+
+url1 <- spg_df$url1 
+  
+url2 <- spg_df$url2
+
+spg_df2 <- spg_df %>% select(-url1, -url2) %>% 
+  mutate_all(~ replace(., is.na(.), ""))
+
+spg_df3 <- spg_df2 %>%
+  kbl(booktabs = T, align = "c") %>%
+  kable_styling(full_width = TRUE) %>%
+  column_spec(3, link = url1) %>% 
+  column_spec(5, link = url2) %>%
+  column_spec(1, bold = T, color = "#990000") %>% 
+  column_spec(3, bold = T, color = "#990000") %>% 
+  column_spec(5, bold = T, color = "#990000") %>% 
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "15em")
+
+spg_df3
+
+```
+
+# Summer 2025 Theme:
+
+## Environmental Pollutants and Kidney Disease
+>>>>>>> main

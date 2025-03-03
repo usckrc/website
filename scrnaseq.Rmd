@@ -23,9 +23,10 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 # List of Datasets
 
-[Kidney Stromal Cells](#KidneyStromalCells) <br>
-[Ace2 Knockout Kidneys](#Ace2KnockoutKidneys) <br>
-
+[Mouse Kidney Stromal Cells](#KidneyStromalCells): snRNAseq from Pdgfrb+ mouse kidneys <br>
+[Ace2 Knockout Mouse Kidneys](#Ace2KnockoutKidneys) snRNAseq from whole mouse kidneys <br>
+[Mouse Brain Endothelial Cells](#MouseBrainECs): scRNAseq from CD31+ mouse brains<br>
+[Mouse Kidney Endothelial Cells](#MouseKidneyECs): scRNAseq from CD31+ mouse brains <br>
 
 # Datasets by Type
 
@@ -33,8 +34,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 <a id="Ace2KnockoutKidneys"></a>
 
-### Ace2 Knockout Kidneys
-
+### Ace2 Knockout Mouse Kidneys
 
 ![](`r here::here("Images", "Gurley_Kidney.png")`)
 
@@ -46,7 +46,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 <a id="KidneyStromalCells"></a>
 
-### Kidney Stromal Cells
+### Mouse Kidney Stromal Cells
 
 
 ![](`r here::here("Images", "Nelson_Stroma.png")`)
@@ -55,22 +55,60 @@ if (!require("here")) {install.packages("here"); require("here")}
 [**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280628) <br>
 **Manuscript** (Unpublished) <br>
 
+<a id="MouseBrainECs"></a>
+
+### Mouse Brain Endothelial Cells
+
+![](`r here::here("Images", "Gyarmati_Brain_ECs.png")`)
+
+[**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Brain_ECs/) <br>
+**GEO** (pending) <br>
+[**Manuscript**](https://www.biorxiv.org/content/10.1101/2024.09.30.615824v1) <br>
+
+<a id="MouseKidneyECs"></a>
+
+### Mouse Kidney Endothelial Cells
+
+![](`r here::here("Images", "Gyarmati_Kidney_ECs.png")`)
+
+[**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Kidney_ECs/) <br>
+**GEO** (pending) <br>
+[**Manuscript**](https://www.biorxiv.org/content/10.1101/2024.09.30.615824v1) <br>
+
+
 # Datasets by Investigator
 
-## Nelson
-
-[Kidney Stromal Cells](#KidneyStromalCells)
-
-## Peti-Peterdi
+## Goodrich
 
 ## Gurley
 
-[Ace2 Knockout Kidneys](#Ace2KnockoutKidneys)
+[Ace2 Knockout Mouse Kidneys](#Ace2KnockoutKidneys)
 
-## Perin
+## Gyarmati
+
+[Mouse Brain Endothelial Cells](#MouseBrainECs) <br>
+[Mouse Kidney Endothelial Cells](#MouseKidneyECs) <br>
+
+## Li
 
 ## McDonough
 
-## Li
+## Nelson
+
+[Mouse Kidney Stromal Cells](#KidneyStromalCells)
+
+## Perin
+
+## Peti-Peterdi
+
+
+
+
+
+
+
+
+
+
 
 
