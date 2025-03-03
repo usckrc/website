@@ -16,6 +16,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load new packages, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
 if (!require("here")) {install.packages("here"); require("here")}
+if (!require("openxlsx")) {install.packages("openxlsx"); require("openxlsx")}
+if (!require("dplyr")) {install.packages("dplyr"); require("dplyr")}
+if (!require("kableExtra")) {install.packages("kableExtra"); require("kableExtra")}
 ```
 
 # About
@@ -33,14 +36,28 @@ Click [**here**](http://eepurl.com/i5ptTQ) to join USC-SCORE and receive emails 
 
 # Upcoming Presentation Topics: 
 
-| Date        | Topic          | Presenter  | Materials |
-| :--------: |:-------------:| :-----:| :-----:|
-| January 27th      | Updates to Seurat V5                                     | Jonathan Nelson |[**SCORE #1**](https://usckrc.github.io/website/SCORE_1.html)|
-| February 24th     | Advances in scRNASeq Technologies                        | Jeremiah Reyes | [**SCORE #2**](https://drive.google.com/drive/folders/1e3xWrerRMHVZ018oyH29_5rZKMsgVVxc?usp=sharing)| 
-| March 31st        | Best Practices for Reporting Data (GitHub/GEO)           | Jessica Bahena-Lopez |
-| April 28th        | Cell-Cell Interactions with CellChat                     | Kevin Burfeind |
-| May 26th          | Access to KPMP Datasets                                  | Xiao-Tong Su |
-| June 30th         | Spatial Transcriptomic Analysis                          | TBD |
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+df <- read.xlsx(here("data", "score_table.xlsx"))
+
+url1 <- df$url1 
+  
+df2 <- df %>% select(-url1) %>% 
+  mutate_all(~ replace(., is.na(.), ""))
+
+df3 <- df2 %>%
+  kbl(booktabs = T, align = "c") %>%
+  kable_styling() %>%
+  column_spec(4, link = url1) %>% 
+  column_spec(4, bold = T, color = "#990000") %>% 
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em")%>%
+  row_spec(3:nrow(df2), align = "c")
+
+df3
+```
 
 # Previous Topics
 
