@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Proteomics</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">USC KRC Bioinformatics</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Kidney JC
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="./kidneyjc.html">Kidney JC</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    USC SCORE
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="./score.html">USC SCORE</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Datasets
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="./scrnaseq.html">scRNAseq</a>
+    </li>
+    <li>
+      <a href="./bulk.html">Bulk</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="./proteomics.html">Proteomics</a>
+</li>
+<li>
+  <a href="./news.html">News</a>
+</li>
+<li>
+  <a href="./members.html">Members</a>
+</li>
+<li>
+  <a href="./contact.html">Contact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a></a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Proteomics</h1>
+
+</div>
+
+
+<div id="list-of-proteomic-datasets" class="section level1">
+<h1>List of Proteomic Datasets</h1>
+<p><a href="#FourCoreGenotype">Four Core Genotype</a> <br> <a
+href="#PTACE2KO">PT ACE2 KO</a> <br></p>
+<p><a id="FourCoreGenotype"></a></p>
+</div>
+<div id="four-core-genotype" class="section level1">
+<h1>Four Core Genotype</h1>
+<p><em>Description here.</em></p>
+<div id="heatmap-of-dataframe" class="section level2">
+<h2>Heatmap of dataframe</h2>
+<p><img src="proteomics_files/figure-html/unnamed-chunk-1-1.png" width="576" /></p>
+</div>
+<div id="table-of-dataframe" class="section level2">
+<h2>Table of dataframe</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+FXX vs. MXY
+</th>
+<th style="text-align:right;">
+FXY vs. MXY
+</th>
+<th style="text-align:right;">
+FXX vs. MXX
+</th>
+<th style="text-align:right;">
+MXX vs. MXY
+</th>
+<th style="text-align:right;">
+FXX vs. FXY
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cNHE3
+</td>
+<td style="text-align:right;">
+-0.286700
+</td>
+<td style="text-align:right;">
+-0.0617
+</td>
+<td style="text-align:right;">
+-0.05167
+</td>
+<td style="text-align:right;">
+-0.245000
+</td>
+<td style="text-align:right;">
+-0.23670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cSGLT2
+</td>
+<td style="text-align:right;">
+0.113300
+</td>
+<td style="text-align:right;">
+-0.0733
+</td>
+<td style="text-align:right;">
+0.34830
+</td>
+<td style="text-align:right;">
+-0.171700
+</td>
+<td style="text-align:right;">
+0.20670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNBCe1
+</td>
+<td style="text-align:right;">
+0.028330
+</td>
+<td style="text-align:right;">
+0.0683
+</td>
+<td style="text-align:right;">
+0.20670
+</td>
+<td style="text-align:right;">
+-0.146700
+</td>
+<td style="text-align:right;">
+-0.03833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNaPi2
+</td>
+<td style="text-align:right;">
+0.255000
+</td>
+<td style="text-align:right;">
+0.0533
+</td>
+<td style="text-align:right;">
+0.46670
+</td>
+<td style="text-align:right;">
+-0.145000
+</td>
+<td style="text-align:right;">
+0.19500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cOAT1
+</td>
+<td style="text-align:right;">
+-0.510000
+</td>
+<td style="text-align:right;">
+-0.5070
+</td>
+<td style="text-align:right;">
+-0.52170
+</td>
+<td style="text-align:right;">
+-0.016670
+</td>
+<td style="text-align:right;">
+-0.01167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cOAT2
+</td>
+<td style="text-align:right;">
+-0.183300
+</td>
+<td style="text-align:right;">
+-0.1630
+</td>
+<td style="text-align:right;">
+0.03500
+</td>
+<td style="text-align:right;">
+-0.201700
+</td>
+<td style="text-align:right;">
+-0.02333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cClaudin2
+</td>
+<td style="text-align:right;">
+0.156700
+</td>
+<td style="text-align:right;">
+0.4030
+</td>
+<td style="text-align:right;">
+0.25830
+</td>
+<td style="text-align:right;">
+-0.070000
+</td>
+<td style="text-align:right;">
+-0.17500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cAQP1
+</td>
+<td style="text-align:right;">
+0.415000
+</td>
+<td style="text-align:right;">
+0.2970
+</td>
+<td style="text-align:right;">
+0.68170
+</td>
+<td style="text-align:right;">
+-0.156700
+</td>
+<td style="text-align:right;">
+0.10330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cSGLT1
+</td>
+<td style="text-align:right;">
+0.745000
+</td>
+<td style="text-align:right;">
+0.0917
+</td>
+<td style="text-align:right;">
+1.41700
+</td>
+<td style="text-align:right;">
+-0.276700
+</td>
+<td style="text-align:right;">
+0.60330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cMegalin
+</td>
+<td style="text-align:right;">
+0.493300
+</td>
+<td style="text-align:right;">
+0.3770
+</td>
+<td style="text-align:right;">
+0.74330
+</td>
+<td style="text-align:right;">
+-0.135000
+</td>
+<td style="text-align:right;">
+0.08667
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cCubilin
+</td>
+<td style="text-align:right;">
+0.555000
+</td>
+<td style="text-align:right;">
+0.5170
+</td>
+<td style="text-align:right;">
+0.61500
+</td>
+<td style="text-align:right;">
+-0.030000
+</td>
+<td style="text-align:right;">
+0.04000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNHERF1
+</td>
+<td style="text-align:right;">
+-0.208300
+</td>
+<td style="text-align:right;">
+-0.2220
+</td>
+<td style="text-align:right;">
+-0.16500
+</td>
+<td style="text-align:right;">
+-0.051670
+</td>
+<td style="text-align:right;">
+0.01667
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNHE3
+</td>
+<td style="text-align:right;">
+0.026670
+</td>
+<td style="text-align:right;">
+-0.0200
+</td>
+<td style="text-align:right;">
+0.12170
+</td>
+<td style="text-align:right;">
+-0.076670
+</td>
+<td style="text-align:right;">
+0.05167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mSGLT1
+</td>
+<td style="text-align:right;">
+0.330000
+</td>
+<td style="text-align:right;">
+0.3530
+</td>
+<td style="text-align:right;">
+0.02667
+</td>
+<td style="text-align:right;">
+0.233300
+</td>
+<td style="text-align:right;">
+-0.06167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNKCC2
+</td>
+<td style="text-align:right;">
+0.270000
+</td>
+<td style="text-align:right;">
+0.0650
+</td>
+<td style="text-align:right;">
+0.35670
+</td>
+<td style="text-align:right;">
+-0.060000
+</td>
+<td style="text-align:right;">
+0.19170
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mWNK4
+</td>
+<td style="text-align:right;">
+0.223300
+</td>
+<td style="text-align:right;">
+0.0483
+</td>
+<td style="text-align:right;">
+0.68670
+</td>
+<td style="text-align:right;">
+-0.255000
+</td>
+<td style="text-align:right;">
+0.17000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNKAα1
+</td>
+<td style="text-align:right;">
+0.548300
+</td>
+<td style="text-align:right;">
+0.0633
+</td>
+<td style="text-align:right;">
+0.80000
+</td>
+<td style="text-align:right;">
+-0.140000
+</td>
+<td style="text-align:right;">
+0.45830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNKAβ1
+</td>
+<td style="text-align:right;">
+0.690000
+</td>
+<td style="text-align:right;">
+0.2770
+</td>
+<td style="text-align:right;">
+0.87330
+</td>
+<td style="text-align:right;">
+-0.103300
+</td>
+<td style="text-align:right;">
+0.32830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mSPAK
+</td>
+<td style="text-align:right;">
+0.543300
+</td>
+<td style="text-align:right;">
+0.2430
+</td>
+<td style="text-align:right;">
+0.49670
+</td>
+<td style="text-align:right;">
+0.030000
+</td>
+<td style="text-align:right;">
+0.24000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP1
+</td>
+<td style="text-align:right;">
+0.391700
+</td>
+<td style="text-align:right;">
+0.0867
+</td>
+<td style="text-align:right;">
+0.77500
+</td>
+<td style="text-align:right;">
+-0.215000
+</td>
+<td style="text-align:right;">
+0.28000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNKCC2
+</td>
+<td style="text-align:right;">
+0.416700
+</td>
+<td style="text-align:right;">
+0.3600
+</td>
+<td style="text-align:right;">
+0.56670
+</td>
+<td style="text-align:right;">
+-0.096670
+</td>
+<td style="text-align:right;">
+0.04167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cUMOD
+</td>
+<td style="text-align:right;">
+0.165000
+</td>
+<td style="text-align:right;">
+0.1030
+</td>
+<td style="text-align:right;">
+0.36830
+</td>
+<td style="text-align:right;">
+-0.145000
+</td>
+<td style="text-align:right;">
+0.06000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNCC
+</td>
+<td style="text-align:right;">
+0.416700
+</td>
+<td style="text-align:right;">
+0.2200
+</td>
+<td style="text-align:right;">
+0.62000
+</td>
+<td style="text-align:right;">
+-0.126700
+</td>
+<td style="text-align:right;">
+0.16000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cKir4.1
+</td>
+<td style="text-align:right;">
+0.020000
+</td>
+<td style="text-align:right;">
+0.0667
+</td>
+<td style="text-align:right;">
+0.17830
+</td>
+<td style="text-align:right;">
+-0.135000
+</td>
+<td style="text-align:right;">
+-0.04333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cWNK4
+</td>
+<td style="text-align:right;">
+0.495000
+</td>
+<td style="text-align:right;">
+0.6200
+</td>
+<td style="text-align:right;">
+0.37830
+</td>
+<td style="text-align:right;">
+0.083330
+</td>
+<td style="text-align:right;">
+-0.07833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cSPAK
+</td>
+<td style="text-align:right;">
+0.796700
+</td>
+<td style="text-align:right;">
+0.6150
+</td>
+<td style="text-align:right;">
+0.98670
+</td>
+<td style="text-align:right;">
+-0.095000
+</td>
+<td style="text-align:right;">
+0.11500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cENaCα-FL
+</td>
+<td style="text-align:right;">
+0.278300
+</td>
+<td style="text-align:right;">
+0.3620
+</td>
+<td style="text-align:right;">
+0.41670
+</td>
+<td style="text-align:right;">
+-0.096670
+</td>
+<td style="text-align:right;">
+-0.05833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cENaCα-Cl
+</td>
+<td style="text-align:right;">
+0.493300
+</td>
+<td style="text-align:right;">
+0.3970
+</td>
+<td style="text-align:right;">
+0.55330
+</td>
+<td style="text-align:right;">
+-0.035000
+</td>
+<td style="text-align:right;">
+0.07000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cENaCβ
+</td>
+<td style="text-align:right;">
+0.256700
+</td>
+<td style="text-align:right;">
+0.1850
+</td>
+<td style="text-align:right;">
+0.46670
+</td>
+<td style="text-align:right;">
+-0.141700
+</td>
+<td style="text-align:right;">
+0.06833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cENaCγ-FL
+</td>
+<td style="text-align:right;">
+0.276700
+</td>
+<td style="text-align:right;">
+0.0917
+</td>
+<td style="text-align:right;">
+0.61830
+</td>
+<td style="text-align:right;">
+-0.206700
+</td>
+<td style="text-align:right;">
+0.16670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cENaCγ-Cl
+</td>
+<td style="text-align:right;">
+0.376700
+</td>
+<td style="text-align:right;">
+0.3720
+</td>
+<td style="text-align:right;">
+0.76330
+</td>
+<td style="text-align:right;">
+-0.215000
+</td>
+<td style="text-align:right;">
+0.01000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cClaudin7
+</td>
+<td style="text-align:right;">
+0.461700
+</td>
+<td style="text-align:right;">
+0.2980
+</td>
+<td style="text-align:right;">
+0.82000
+</td>
+<td style="text-align:right;">
+-0.190000
+</td>
+<td style="text-align:right;">
+0.13000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cClaudin8
+</td>
+<td style="text-align:right;">
+0.990000
+</td>
+<td style="text-align:right;">
+1.4300
+</td>
+<td style="text-align:right;">
+1.10500
+</td>
+<td style="text-align:right;">
+-0.048330
+</td>
+<td style="text-align:right;">
+-0.18000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cROMK
+</td>
+<td style="text-align:right;">
+-0.010000
+</td>
+<td style="text-align:right;">
+-0.0917
+</td>
+<td style="text-align:right;">
+0.16500
+</td>
+<td style="text-align:right;">
+-0.150000
+</td>
+<td style="text-align:right;">
+0.09000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cPendrin
+</td>
+<td style="text-align:right;">
+0.220000
+</td>
+<td style="text-align:right;">
+0.1480
+</td>
+<td style="text-align:right;">
+0.26000
+</td>
+<td style="text-align:right;">
+-0.035000
+</td>
+<td style="text-align:right;">
+0.06167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cBKβ4
+</td>
+<td style="text-align:right;">
+0.076670
+</td>
+<td style="text-align:right;">
+0.7080
+</td>
+<td style="text-align:right;">
+2.06300
+</td>
+<td style="text-align:right;">
+-0.643300
+</td>
+<td style="text-align:right;">
+-0.36500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNDCBE1
+</td>
+<td style="text-align:right;">
+-0.371700
+</td>
+<td style="text-align:right;">
+-0.4480
+</td>
+<td style="text-align:right;">
+-0.35670
+</td>
+<td style="text-align:right;">
+-0.001667
+</td>
+<td style="text-align:right;">
+0.18830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cTRPV4
+</td>
+<td style="text-align:right;">
+-0.276700
+</td>
+<td style="text-align:right;">
+-0.1880
+</td>
+<td style="text-align:right;">
+-0.23670
+</td>
+<td style="text-align:right;">
+-0.053330
+</td>
+<td style="text-align:right;">
+-0.10670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cAQP2
+</td>
+<td style="text-align:right;">
+0.193300
+</td>
+<td style="text-align:right;">
+0.1450
+</td>
+<td style="text-align:right;">
+0.53830
+</td>
+<td style="text-align:right;">
+-0.225000
+</td>
+<td style="text-align:right;">
+0.04000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cMUC1
+</td>
+<td style="text-align:right;">
+0.621700
+</td>
+<td style="text-align:right;">
+0.5680
+</td>
+<td style="text-align:right;">
+0.70500
+</td>
+<td style="text-align:right;">
+-0.048330
+</td>
+<td style="text-align:right;">
+0.03333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP2
+</td>
+<td style="text-align:right;">
+-0.061670
+</td>
+<td style="text-align:right;">
+-0.0917
+</td>
+<td style="text-align:right;">
+0.02167
+</td>
+<td style="text-align:right;">
+-0.083330
+</td>
+<td style="text-align:right;">
+0.03500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP3
+</td>
+<td style="text-align:right;">
+0.001667
+</td>
+<td style="text-align:right;">
+-0.1120
+</td>
+<td style="text-align:right;">
+0.04667
+</td>
+<td style="text-align:right;">
+-0.041670
+</td>
+<td style="text-align:right;">
+0.12830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP4
+</td>
+<td style="text-align:right;">
+0.505000
+</td>
+<td style="text-align:right;">
+0.0433
+</td>
+<td style="text-align:right;">
+0.83670
+</td>
+<td style="text-align:right;">
+-0.183300
+</td>
+<td style="text-align:right;">
+0.47330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mBKβ4
+</td>
+<td style="text-align:right;">
+0.130000
+</td>
+<td style="text-align:right;">
+-0.0433
+</td>
+<td style="text-align:right;">
+2.65700
+</td>
+<td style="text-align:right;">
+-0.690000
+</td>
+<td style="text-align:right;">
+-0.25830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mMUC1
+</td>
+<td style="text-align:right;">
+0.300000
+</td>
+<td style="text-align:right;">
+0.0450
+</td>
+<td style="text-align:right;">
+0.21000
+</td>
+<td style="text-align:right;">
+0.075000
+</td>
+<td style="text-align:right;">
+0.24170
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cV-ATPaseβ1
+</td>
+<td style="text-align:right;">
+-0.238300
+</td>
+<td style="text-align:right;">
+-0.1850
+</td>
+<td style="text-align:right;">
+-0.25000
+</td>
+<td style="text-align:right;">
+0.023330
+</td>
+<td style="text-align:right;">
+-0.06333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNKAα1
+</td>
+<td style="text-align:right;">
+0.525000
+</td>
+<td style="text-align:right;">
+0.3330
+</td>
+<td style="text-align:right;">
+0.54000
+</td>
+<td style="text-align:right;">
+-0.011670
+</td>
+<td style="text-align:right;">
+0.14170
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cNKAβ1
+</td>
+<td style="text-align:right;">
+0.365000
+</td>
+<td style="text-align:right;">
+0.2300
+</td>
+<td style="text-align:right;">
+0.48500
+</td>
+<td style="text-align:right;">
+-0.075000
+</td>
+<td style="text-align:right;">
+0.12670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cSGK1
+</td>
+<td style="text-align:right;">
+0.111700
+</td>
+<td style="text-align:right;">
+0.1720
+</td>
+<td style="text-align:right;">
+0.20830
+</td>
+<td style="text-align:right;">
+-0.078330
+</td>
+<td style="text-align:right;">
+-0.05000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="link-to-download" class="section level2">
+<h2>Link to download</h2>
+<p><a href="raw%20data/FCG_data.xlsx">Download FCG data</a></p>
+<p><a id="PTACE2KO"></a></p>
+</div>
+</div>
+<div id="pt-ace2-ko" class="section level1">
+<h1>PT ACE2 KO</h1>
+<p><em>Description here.</em></p>
+<div id="heatmap-of-dataframe-1" class="section level2">
+<h2>Heatmap of dataframe</h2>
+<p><img src="proteomics_files/figure-html/unnamed-chunk-4-1.png" width="480" /></p>
+</div>
+<div id="table-of-dataframe-1" class="section level2">
+<h2>Table of dataframe</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+WT
+</th>
+<th style="text-align:right;">
+WT+AngII
+</th>
+<th style="text-align:right;">
+KO
+</th>
+<th style="text-align:right;">
+KO+AngII
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+NHE3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SGLT2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+<td style="text-align:right;">
+1.20
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Claudin 2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+0.91
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AQP1 - 35 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.10
+</td>
+<td style="text-align:right;">
+1.28
+</td>
+<td style="text-align:right;">
+1.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AQP1 - 23 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+1.23
+</td>
+<td style="text-align:right;">
+0.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNHE3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.84
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+0.68
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP1 - 35 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.04
+</td>
+<td style="text-align:right;">
+1.03
+</td>
+<td style="text-align:right;">
+1.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP1 - 23 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.05
+</td>
+<td style="text-align:right;">
+1.08
+</td>
+<td style="text-align:right;">
+1.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNKCC2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+0.95
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNKA alpha 1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.03
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mNKA beta 1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.93
+</td>
+<td style="text-align:right;">
+0.95
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mHO-1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.86
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NKA alpha 1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+<td style="text-align:right;">
+0.79
+</td>
+<td style="text-align:right;">
+0.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NKA beta 1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NKCC2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+<td style="text-align:right;">
+0.97
+</td>
+<td style="text-align:right;">
+0.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NCC
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.20
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENaC alpha - FL
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+0.93
+</td>
+<td style="text-align:right;">
+0.77
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENaC alpha - cl
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+<td style="text-align:right;">
+0.94
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENaC gamma - FL
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.68
+</td>
+<td style="text-align:right;">
+1.10
+</td>
+<td style="text-align:right;">
+0.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENaC gamma - cl
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.70
+</td>
+<td style="text-align:right;">
+0.81
+</td>
+<td style="text-align:right;">
+0.70
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Claudin 7
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.95
+</td>
+<td style="text-align:right;">
+1.09
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Claudin 8
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ROMK - glycos
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+<td style="text-align:right;">
+1.03
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ROMK - core
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.10
+</td>
+<td style="text-align:right;">
+1.10
+</td>
+<td style="text-align:right;">
+1.23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AQP2 - 37 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+<td style="text-align:right;">
+1.31
+</td>
+<td style="text-align:right;">
+1.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AQP2 - 23 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.15
+</td>
+<td style="text-align:right;">
+1.22
+</td>
+<td style="text-align:right;">
+1.13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP2 - 37 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+1.08
+</td>
+<td style="text-align:right;">
+0.97
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mAQP2 - 23 kD
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+1.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mClaudin 10
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.22
+</td>
+<td style="text-align:right;">
+1.07
+</td>
+<td style="text-align:right;">
+1.51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angiotensinogen
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.13
+</td>
+<td style="text-align:right;">
+1.05
+</td>
+<td style="text-align:right;">
+1.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACE1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.12
+</td>
+<td style="text-align:right;">
+0.94
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACE2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.59
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="link-to-download-1" class="section level2">
+<h2>Link to download</h2>
+<p><a href="raw%20data/PT_ACE2_KO_data.xlsx">Download PT ACE2 KO
+data</a></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
