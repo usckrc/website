@@ -40,43 +40,11 @@ Click [**here**](http://eepurl.com/i5eqL6) to join the Southern California Kidne
 
 # Current Theme
 
-## Spring 2025: Intravital Imaging
-
-### Organizer: Georgina Gyarmati
-
-```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
-
-spg_df <- read.xlsx(here("data", "sckjc_spring2025.xlsx"))
-
-url1 <- spg_df$url1 
-  
-url2 <- spg_df$url2
-
-spg_df2 <- spg_df %>% select(-url1, -url2) %>% 
-  mutate_all(~ replace(., is.na(.), ""))
-
-spg_df3 <- spg_df2 %>%
-  kbl(booktabs = T, align = "c") %>%
-  kable_styling(full_width = TRUE) %>%
-  column_spec(3, link = url1) %>% 
-  column_spec(5, link = url2) %>%
-  column_spec(1, bold = T, color = "#990000") %>% 
-  column_spec(3, bold = T, color = "#990000") %>% 
-  column_spec(5, bold = T, color = "#990000") %>% 
-  column_spec(1, width = "10em") %>%
-  column_spec(2, width = "40em") %>%
-  column_spec(3, width = "5em") %>%
-  column_spec(4, width = "15em") %>%   
-  row_spec(2:nrow(spg_df2), align = "c")
-
-
-spg_df3
-
-```
+## Summer 2025: Impact of Environment on Kidney Function
 
 # Upcoming Theme
 
-## Summer 2025: Environmental Pollutants and Kidney Disease
+## Fall 2025: Aging and the Kidney
 
 # Past Themes
 
@@ -118,6 +86,40 @@ wtr_df4 <- wtr_df2 %>%
   column_spec(4, width = "10em")
 
 wtr_df4
+
+```
+
+## Spring 2025: Intravital Imaging
+
+### Organizer: Georgina Gyarmati
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+spg_df <- read.xlsx(here("data", "sckjc_spring2025.xlsx"))
+
+url1 <- spg_df$url1 
+  
+url2 <- spg_df$url2
+
+spg_df2 <- spg_df %>% select(-url1, -url2) %>% 
+  mutate_all(~ replace(., is.na(.), ""))
+
+spg_df3 <- spg_df2 %>%
+  kbl(booktabs = T, align = "c") %>%
+  kable_styling(full_width = TRUE) %>%
+  column_spec(3, link = url1) %>% 
+  column_spec(5, link = url2) %>%
+  column_spec(1, bold = T, color = "#990000") %>% 
+  column_spec(3, bold = T, color = "#990000") %>% 
+  column_spec(5, bold = T, color = "#990000") %>% 
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "15em") %>%   
+  row_spec(2:nrow(spg_df2), align = "c")
+
+
+spg_df3
 
 ```
 
