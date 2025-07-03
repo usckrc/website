@@ -42,15 +42,58 @@ Click [**here**](http://eepurl.com/i5eqL6) to join the Southern California Kidne
 
 ## Summer 2025: Impact of Environment on Kidney Function
 
+### Organizer: [Jason Wu](https://physiology.arizona.edu/person/jing-jason-o-wu-phd-faha)
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+wtr_df <- read.xlsx(here("data", "sckjc_summer2025.xlsx"))
+
+url1 <- wtr_df$url1 
+  
+url2 <- wtr_df$url2
+
+wtr_df2 <- wtr_df %>% select(-url1, -url2) %>% 
+  mutate_all(~ replace(., is.na(.), ""))
+
+#wtr_df3 <- wtr_df2 %>%
+  #kbl(booktabs = T, align = "c") %>%
+  #kable_styling() %>%
+  #kable_paper(full_width = T) %>%
+  #column_spec(3, link = url1) %>% 
+  #column_spec(5, link = url2)
+
+#wtr_df3
+
+wtr_df4 <- wtr_df2 %>%
+  kbl(booktabs = T, align = "c") %>%
+  kable_styling() %>%
+  column_spec(3, link = url1) %>% 
+  column_spec(5, link = url2) %>%
+  column_spec(1, bold = T, color = "#990000") %>% 
+  column_spec(3, bold = T, color = "#990000") %>% 
+  column_spec(5, bold = T, color = "#990000") %>% 
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "25em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em")
+
+wtr_df4
+
+```
+
+<br><br>
+
 # Upcoming Theme
 
 ## Fall 2025: Aging and the Kidney
+
+<br><br>
 
 # Past Themes
 
 ## Winter 2025: Hypertension and Kidney Damage
 
-### Organizers: Alicia McDonough and Jonathan Nelson
+### Organizers: [Alicia McDonough](https://keck.usc.edu/faculty-search/alicia-a-mcdonough/) and [Jonathan Nelson](https://keck.usc.edu/faculty-search/jonathan-nelson/)
 
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
@@ -89,9 +132,9 @@ wtr_df4
 
 ```
 
-## Spring 2025: Intravital Imaging
+## Spring 2025: Intravital Imaging and the Kidney
 
-### Organizer: Georgina Gyarmati
+### Organizer: [Georgina Gyarmati](https://keck.usc.edu/faculty-search/georgina-gyarmati/)
 
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
