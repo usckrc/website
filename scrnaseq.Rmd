@@ -27,6 +27,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 [Ace2 Knockout Mouse Kidneys](#Ace2KnockoutKidneys) snRNAseq from whole mouse kidneys <br>
 [Mouse Brain Endothelial Cells](#MouseBrainECs): scRNAseq from CD31+ mouse brains<br>
 [Mouse Kidney Endothelial Cells](#MouseKidneyECs): scRNAseq from CD31+ mouse brains <br>
+[Mouse Macula Densa Cells](#MouseMaculaDensa): scRNAseq from Nos1+ mouse kidneys <br>
 
 # Datasets by Type
 
@@ -77,6 +78,16 @@ if (!require("here")) {install.packages("here"); require("here")}
 **GEO** (pending) <br>
 [**Manuscript**](https://www.biorxiv.org/content/10.1101/2024.09.30.615824v1) <br>
 
+<a id="MouseMaculaDensa"></a>
+
+### Mouse Macula Densa Cells
+
+![](`r here::here("Images", "Peti_peterdi_MD.png")`)
+
+[**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Macula_Densa/) <br>
+**GEO** (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189954) <br>
+[**Manuscript**](https://pubmed.ncbi.nlm.nih.gov/38598837/) <br>
+
 
 # Datasets by Investigator
 
@@ -103,7 +114,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 ## Peti-Peterdi
 
-
+[Mouse Macula Densa Cells](#MouseMaculaDensa)
 
 
 
