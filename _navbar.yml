@@ -24,7 +24,7 @@ left:
   - text: "Kidney scRNAseq Guides"
     menu:
       - text: "Dataset Analysis and Annotation"
-        href: ./scRNAseq_guide.html
+        href: ./scRNAseq_guide_1.html
 
   - text: "News"
     href: ./news.html
