@@ -4,26 +4,34 @@ type: inverse
 left:
   - text: "Kidney JC"
     menu:
-       - text: "Kidney JC"
-         href: ./kidneyjc.html
+      - text: "Kidney JC"
+        href: ./kidneyjc.html
+
   - text: "USC SCORE"
     menu:
-       - text: "USC SCORE"
-         href: ./score.html
+      - text: "USC SCORE"
+        href: ./score.html
+
   - text: "Datasets"
     menu:
-       - text: "scRNAseq"
-         href: ./scrnaseq.html
-       - text: "Bulk"
-         href: ./bulk.html
-       - text: "Proteomics"
-         href: ./proteomics.html
+      - text: "scRNAseq"
+        href: ./scrnaseq.html
+      - text: "Bulk"
+        href: ./bulk.html
+      - text: "Proteomics"
+        href: ./proteomics.html
+
+  - text: "Kidney scRNAseq Guides"
+    menu:
+      - text: "Dataset Analysis and Annotation"
+        href: ./scrnaseq_guide.html
+
   - text: "News"
     href: ./news.html
-  - text: "Members"
-    href: ./members.html
+
   - text: "Contact"
     href: ./contact.html
+
 right:
-  - icon:
+  - icon: 
     href: 
