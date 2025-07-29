@@ -85,7 +85,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 ![](`r here::here("Images", "Peti_peterdi_MD.png")`)
 
 [**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Macula_Densa/) <br>
-**GEO** (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189954) <br>
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189954) <br>
 [**Manuscript**](https://pubmed.ncbi.nlm.nih.gov/38598837/) <br>
 
 
