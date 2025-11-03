@@ -24,10 +24,14 @@ if (!require("here")) {install.packages("here"); require("here")}
 # List of Datasets
 
 [Mouse Kidney Stromal Cells](#KidneyStromalCells): snRNAseq from Pdgfrb+ mouse kidneys <br>
-[Ace2 Knockout Mouse Kidneys](#Ace2KnockoutKidneys) snRNAseq from whole mouse kidneys <br>
+[Ace2 Knockout Mouse Kidneys](#Ace2KnockoutKidneys): snRNAseq from whole mouse kidneys <br>
 [Mouse Brain Endothelial Cells](#MouseBrainECs): scRNAseq from CD31+ mouse brains<br>
 [Mouse Kidney Endothelial Cells](#MouseKidneyECs): scRNAseq from CD31+ mouse brains <br>
 [Mouse Macula Densa Cells](#MouseMaculaDensa): scRNAseq from Nos1+ mouse kidneys <br>
+[snRNAseq of Human In Vivo Kidney Assembloids](#HumanInVivoKidneyAssembloids): snRNAseq of Human In Vivo Kidney Assembloids <br>
+[snRNAseq of Human In Vitro Kidney Assembloids](#HumanInVitroKidneyAssembloids): snRNAseq of Human In Vitro Kidney Assembloids <br>
+[snRNAseq of Human Fetal Kidney Week17](#HumanFetalKidneyWeek17): snRNAseq of Human Fetal Kidney Week17 <br>
+[Human Kidney Assembloid snRNA-seq Integration: PKD Knockout and Wild Type](#HumanKidneyAssembloidSnRNAseqIntegrationPKDKnockoutAndWildType): snRNAseq of Human Kidney Assembloid Integration comparing PKD Knockout and Wild Type <br>
 
 # Datasets by Type
 
@@ -37,7 +41,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 ### Ace2 Knockout Mouse Kidneys
 
-![](`r here::here("Images", "Gurley_Kidney.png")`)
+<img src="`r here::here("Images", "Gurley_Kidney.png")`"width="500px">
 
 [**Interactive Browser**](https://nelsonlab.shinyapps.io/PTACE2KO_Kidney/) <br>
 [**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE253448) <br>
@@ -51,8 +55,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 ### Mouse Kidney Stromal Cells
 
-
-![](`r here::here("Images", "Nelson_Stroma.png")`)
+<img src="`r here::here("Images", "Nelson_Stroma.png")`"width="500px">
 
 [**Interactive Browser**](https://nelsonlab.shinyapps.io/Pdgfrb_INTACT/) <br>
 [**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280628) <br>
@@ -62,7 +65,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 ### Mouse Brain Endothelial Cells
 
-![](`r here::here("Images", "Gyarmati_Brain_ECs.png")`)
+<img src="`r here::here("Images", "Gyarmati_Brain_ECs.png")`"width="500px">
 
 [**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Brain_ECs/) <br>
 **GEO** (pending) <br>
@@ -72,7 +75,7 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 ### Mouse Kidney Endothelial Cells
 
-![](`r here::here("Images", "Gyarmati_Kidney_ECs.png")`)
+<img src="`r here::here("Images", "Gyarmati_Kidney_ECs.png")`"width="500px">
 
 [**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Kidney_ECs/) <br>
 **GEO** (pending) <br>
@@ -82,12 +85,51 @@ if (!require("here")) {install.packages("here"); require("here")}
 
 ### Mouse Macula Densa Cells
 
-![](`r here::here("Images", "Peti_peterdi_MD.png")`)
+<img src="`r here::here("Images", "Peti_peterdi_MD.png")`"width="500px">
 
 [**Interactive Browser**](https://usckrc.shinyapps.io/Mouse_Macula_Densa/) <br>
 [**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189954) <br>
 [**Manuscript**](https://pubmed.ncbi.nlm.nih.gov/38598837/) <br>
 
+<a id="HumanInVivoKidneyAssembloids"></a>
+
+### Human In Vivo Kidney Assembloids
+
+<img src="`r here::here("Images", "hkpa_invivo.png")`"width="500px">
+
+[**Interactive Browser**](https://zhongweililab.shinyapps.io/hkpa_invivo/) <br>
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE262382) <br>
+[**Manuscript**](https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00328-5) <br>
+
+<a id="HumanInVitroKidneyAssembloids"></a>
+
+### Human In Vitro Kidney Assembloids
+
+<img src="`r here::here("Images", "hkpa_invitro.png")`"width="500px">
+
+[**Interactive Browser**](https://zhongweililab.shinyapps.io/hkpa_invitro/) <br> 
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE272707) <br>
+[**Manuscript**](https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00328-5) <br>
+
+<a id="HumanFetalKidneyWeek17"></a>
+
+### Human Fetal Kidney Week17
+
+<img src="`r here::here("Images", "HFK_17W.png")`"width="500px">
+
+[**Interactive Browser**](https://zhongweililab.shinyapps.io/HFK_17W/) <br>
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297771) <br>
+[**Manuscript**](https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00328-5) <br>
+
+<a id="HumanKidneyAssembloidSnRNAseqIntegrationPKDKnockoutAndWildType"></a>
+
+### Human Kidney Assembloid snRNA-seq Integration: PKD Knockout and Wild Type
+
+<img src="`r here::here("Images", "hkpa_pkd_wt.png")`"width="500px">
+
+[**Interactive Browser**](https://zhongweililab.shinyapps.io/hkpa_pkd_wt/) <br>
+[**GEO**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297772) <br>
+[**Manuscript**](https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00328-5) <br>
 
 # Datasets by Investigator
 
@@ -103,6 +145,11 @@ if (!require("here")) {install.packages("here"); require("here")}
 [Mouse Kidney Endothelial Cells](#MouseKidneyECs) <br>
 
 ## Li
+
+[snRNAseq of Human In Vivo Kidney Assembloids](#HumanInVivoKidneyAssembloids) <br>
+[snRNAseq of Human In Vitro Kidney Assembloids](#HumanInVitroKidneyAssembloids) <br>
+[snRNAseq of Human Fetal Kidney Week17](#HumanFetalKidneyWeek17) <br>
+[Human Kidney Assembloid snRNA-seq Integration: PKD Knockout and Wild Type](#HumanKidneyAssembloidSnRNAseqIntegrationPKDKnockoutAndWildType) <br>
 
 ## McDonough
 
